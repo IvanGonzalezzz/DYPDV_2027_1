@@ -59,6 +59,13 @@ public class ControlJugador : MonoBehaviour
         else
             bufferTimer -= delta;
         
+        if (bufferTimer > 0 && coyoteTimer > 0){
+            velocidadVertical = fuerzaSalto;
+            jugador.enSuelo = false;
+            bufferTimer = 0;
+            coyoteTimer = 0;
+            Debug.Log("Input Detectado: Tecla de Salto (Espacio)");
+        }
     }
     void FixedUpdate()
     {
