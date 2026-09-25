@@ -1,40 +1,21 @@
 
-Base_Pong.cpp
-Página
-1
-/
-1
-100 %
-//Base_Pong.cpp : A bouncing ball 
-
 //#include <windows.h> //the windows include file, required by all windows applications
 #include <GL/glut.h> //the glut file for windows operations
                      // it also includes gl.h and glu.h for the openGL library calls
 #include <math.h>
-
+#include <stdio.h>
 #define PI 3.1415926535898 
 
-double xpos, ypos, ydir, xdir;         // x and y position for house to be drawn
-double sx, sy, squash;          // xy scale factors
-double rot, rdir;             // rotation
+double bx, by, bdx, bdy;         // x and y position for house to be drawn
 double ball_speed;
 
-GLfloat T1[16] = {1.,0.,0.,0.,\
-                  0.,1.,0.,0.,\
-                  0.,0.,1.,0.,\
-                  0.,0.,0.,1.};
-GLfloat S[16] = {1.,0.,0.,0.,\
-                 0.,1.,0.,0.,\
-                 0.,0.,1.,0.,\
-                 0.,0.,0.,1.};
-GLfloat T[16] = {1.,0.,0.,0.,\
-                 0., 1., 0., 0.,\
-                 0.,0.,1.,0.,\
-                 0.,0.,0.,1.};
+GLfloat paddleWidth = 3.f;
+GLfloat paddleHeight = 20.f;
+GLfloat paddleSpeed = 1.5f;
+double p1y, p2y;
+double p1x = 8.0;
+double p2x = 152.0;
 
-
-
-#define PI 3.1415926535898 
 GLint circle_points = 100; 
 void MyCircle2f(GLfloat centerx, GLfloat centery, GLfloat radius){
   GLint i;
@@ -47,13 +28,24 @@ void MyCircle2f(GLfloat centerx, GLfloat centery, GLfloat radius){
   glEnd();
 }
 
-GLfloat RadiusOfBall = 15.;
+GLfloat RadiusOfBall = 3.;
 // Draw the ball, centered at the origin
 void draw_ball() {
   glColor3f(0.6,0.3,0.);
   MyCircle2f(0.,0.,RadiusOfBall);
   
 }
+
+void draw_paddle(double x, double y) {
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+        glVertex2f((GLfloat)(x - paddleWidth / 2), (GLfloat)(y - paddleHeight / 2));
+        glVertex2f((GLfloat)(x + paddleWidth / 2), (GLfloat)(y - paddleHeight / 2));
+        glVertex2f((GLfloat)(x + paddleWidth / 2), (GLfloat)(y + paddleHeight / 2));
+        glVertex2f((GLfloat)(x - paddleWidth / 2), (GLfloat)(y + paddleHeight / 2));
+    glEnd();
+}
+
 
 void Display(void)
 {
@@ -64,72 +56,29 @@ void Display(void)
   glClear(GL_COLOR_BUFFER_BIT);
   // 160 is max X value in our world
 
- 	
-	// Shape has hit the ground! Stop moving and start squashing down and then back up 
-	if (ypos == RadiusOfBall && ydir == -1  ) { 
-		sy = sy*squash ; 
-		
-		if (sy < 0.8)
-			// reached maximum suqash, now unsquash back up 
-			squash = 1.1;
-		else if (sy > 1.) {
-			// reset squash parameters and bounce ball back upwards
-			sy = 1.;
-			squash = 0.9;
-			ydir = 1;
-		}
-		sx = 1./sy;
+  // Mover la pelota
+  bx += bdx * ball_speed;
+  by += bdy * ball_speed;
 
-        // 120 is max Y value in our world
-	    
-	} else {
-        // set Y position to increment 1.5 times the direction of the bounce
-        ypos += ydir*ball_speed;
-
-	    // If ball touches the top, change direction of ball downwards
-  	    if (ypos == 120-RadiusOfBall){
-    	    ydir = -1;
-        }
-	    // If ball touches the bottom, change direction of ball upwards
-        else if (ypos < RadiusOfBall)
-		    ydir = 1;
-	}
-  
-/*  //reset transformation state 
+  // Rebote arriba / abajo (por ahora, los lados los dejamos para el commit de colisiones/puntuación)
+  if (by + RadiusOfBall >= 120) {
+      by = 120 - RadiusOfBall;
+      bdy = -1;
+  }
+  else if (by - RadiusOfBall <= 0) {
+      by = RadiusOfBall;
+      bdy = 1;
+  }
   glLoadIdentity();
-  
-  // apply translation
-  glTranslatef(xpos,ypos, 0.);
 
-  // Translate ball back to center
-  glTranslatef(0.,-RadiusOfBall, 0.);
-  // Scale the ball about its bottom
-  glScalef(sx,sy, 1.);
-  // Translate ball up so bottom is at the origin
-  glTranslatef(0.,RadiusOfBall, 0.);
-  // draw the ball
+  // Trasladar la pelota a su posicion actual
+  glPushMatrix();
+  glTranslatef((GLfloat)bx, (GLfloat)by, 0.f);
   draw_ball();
-*/
- 
-  //Translate the bouncing ball to its new position
-  T[12]= xpos;
-  T[13] = ypos;
-  glLoadMatrixf(T);
+  glPopMatrix();
 
-  T1[13] = -RadiusOfBall;
-  // Translate ball back to center
-  glMultMatrixf(T1);
-  S[0] = sx;
-  S[5] = sy;
-  // Scale the ball about its bottom
-  glMultMatrixf(S);
-  
-  T1[13] = RadiusOfBall;
-  // Translate ball up so bottom is at the origin
-
-  glMultMatrixf(T1);
-  
-  draw_ball();
+  draw_paddle(p1x, p1y);
+  draw_paddle(p2x, p2y);
   glutPostRedisplay(); 
 
   
@@ -153,14 +102,17 @@ void reshape (int w, int h)
 
 
 void init(void){
-  //set the clear color
-  glClearColor(0.0,0.8,0.0,1.0);
-  // initial position set to 0,0
-  xpos = 80; ypos = RadiusOfBall; xdir = 1; ydir = 1;
-  sx = 1.; sy = 1.; squash = 0.9;
-  rot = 0;
-  ball_speed = 1.5;
+    glClearColor(0.0,0.8,0.0,1.0);
 
+    bx = 80.0;
+    by = 60.0;
+    bdx = 1.0;
+    bdy = 1.0;
+
+    p1y = 60.0;
+    p2y = 60.0;
+
+    ball_speed = 1.5;
 }
 
 
@@ -170,7 +122,7 @@ int main(int argc, char* argv[])
   glutInit( & argc, argv );
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
   glutInitWindowSize (320, 240);   
-  glutCreateWindow("Bouncing Ball");
+  glutCreateWindow("Pong");
   init();
   glutDisplayFunc(Display);
   glutReshapeFunc(reshape);
@@ -178,4 +130,3 @@ int main(int argc, char* argv[])
 
   return 1;
 }
-Mostrando Base_Pong.cpp.Anterior
