@@ -16,6 +16,9 @@ double p1y, p2y;
 double p1x = 8.0;
 double p2x = 152.0;
 
+bool upPressed = false, downPressed = false;
+bool wPressed = false, sPressed = false;
+
 GLint circle_points = 100; 
 void MyCircle2f(GLfloat centerx, GLfloat centery, GLfloat radius){
   GLint i;
@@ -46,15 +49,32 @@ void draw_paddle(double x, double y) {
     glEnd();
 }
 
+void update_paddles() {
+    // Jugador 1: W (arriba) / S (abajo)
+    if (wPressed) p1y += paddleSpeed;
+    if (sPressed) p1y -= paddleSpeed;
+ 
+    // Jugador 2: flecha arriba / flecha abajo
+    if (upPressed) p2y += paddleSpeed;
+    if (downPressed) p2y -= paddleSpeed;
+ 
+    // Limitar paletas para que no salgan de la pantalla (mundo 0-120 en Y)
+    double halfP = paddleHeight / 2.0;
+    if (p1y - halfP < 0) p1y = halfP;
+    if (p1y + halfP > 120) p1y = 120 - halfP;
+    if (p2y - halfP < 0) p2y = halfP;
+    if (p2y + halfP > 120) p2y = 120 - halfP;
+}
+
 
 void Display(void)
 {
   // swap the buffers
   glutSwapBuffers(); 
-
   //clear all pixels with the specified clear color
   glClear(GL_COLOR_BUFFER_BIT);
-  // 160 is max X value in our world
+
+  update_paddles();
 
   // Mover la pelota
   bx += bdx * ball_speed;
@@ -100,6 +120,25 @@ void reshape (int w, int h)
 
 }
 
+void keyDown(unsigned char key, int x, int y) {
+    if (key == 'w' || key == 'W') wPressed = true;
+    if (key == 's' || key == 'S') sPressed = true;
+}
+
+void keyUp(unsigned char key, int x, int y) {
+    if (key == 'w' || key == 'W') wPressed = false;
+    if (key == 's' || key == 'S') sPressed = false;
+}
+
+void specialKeyDown(int key, int x, int y) {
+    if (key == GLUT_KEY_UP) upPressed = true;
+    if (key == GLUT_KEY_DOWN) downPressed = true;
+}
+
+void specialKeyUp(int key, int x, int y) {
+    if (key == GLUT_KEY_UP) upPressed = false;
+    if (key == GLUT_KEY_DOWN) downPressed = false;
+}
 
 void init(void){
     glClearColor(0.0,0.8,0.0,1.0);
@@ -126,6 +165,10 @@ int main(int argc, char* argv[])
   init();
   glutDisplayFunc(Display);
   glutReshapeFunc(reshape);
+  glutKeyboardFunc(keyDown);
+  glutKeyboardUpFunc(keyUp);
+  glutSpecialFunc(specialKeyDown);
+  glutSpecialUpFunc(specialKeyUp);
   glutMainLoop();
 
   return 1;
