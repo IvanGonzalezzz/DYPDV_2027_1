@@ -48,40 +48,17 @@ public class ControlJugador : MonoBehaviour
             if (Mathf.Abs(velocidadActual) < 0.1f)
                 velocidadActual = 0;
         }
-        
-        
-        if (Input.GetAxis("Jump") > 0 && jugador.enSuelo){
-            velocidadVertical = 10f;
-            jugador.enSuelo = false;
-            tiempoSaltoActual = 0f;
-            Debug.Log("Input Detectado: Tecla de Salto (Espacio)");
-        }
-
-        if (!jugador.enSuelo && Input.GetAxis("Jump") > 0)
-        {
-            if (tiempoSaltoActual < tiempoMaxSalto)
-            {
-                velocidadVertical += 20f * delta;
-                tiempoSaltoActual += delta;
-            }
-        }
-
-        if (Input.GetAxis("Jump") == 0)
-        {
-            tiempoSaltoActual = tiempoMaxSalto;
-        }
 
         if (jugador.enSuelo)
-        {
-            velocidadVertical = 0;
-        }
+            coyoteTimer = tiempoCoyote;
         else
-        {
-            velocidadVertical += gravedad * delta;
-        }
+            coyoteTimer -= delta;
 
-        transform.position += new Vector3(0, velocidadVertical * delta, 0);
-
+        if (Input.GetAxis("Jump") > 0)
+            bufferTimer = tiempoBufferSalto;
+        else
+            bufferTimer -= delta;
+        
     }
     void FixedUpdate()
     {
