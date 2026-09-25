@@ -77,6 +77,10 @@ public class ControlJugador : MonoBehaviour
             velocidadVertical * delta,
             0
         );
+        
+        estaCaminando = Mathf.Abs(velocidadActual) > 0.1f;
+        estaSaltando = velocidadVertical > 0.1f;
+        estaCayendo = velocidadVertical < -0.1f;
     }
     void FixedUpdate()
     {
