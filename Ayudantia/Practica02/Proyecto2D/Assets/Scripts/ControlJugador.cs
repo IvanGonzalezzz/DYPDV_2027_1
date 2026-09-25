@@ -20,13 +20,12 @@ public class ControlJugador : MonoBehaviour
         float delta = Time.time - tiempoAnterior;
         tiempoAnterior = Time.time;
         float h = Input.GetAxis("Horizontal");
-        if (Mathf.Abs(h) > 0.01f)
-        {
+        velocidadActual += h * aceleracion * delta;
+        velocidadActual = Mathf.Clamp(velocidadActual, -velocidadMax, velocidadMax);
+        transform.position += new Vector3(velocidadActual * delta, 0, 0);
+
+        if (Mathf.Abs(h) > 0.01f){
             Debug.Log("Movimiento horizontal: " + h);
-        }
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("Input Detectado: Tecla de Salto (Espacio)");
         }
     }
     void FixedUpdate()
