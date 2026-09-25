@@ -15,8 +15,7 @@ public class ControlJugador : MonoBehaviour
     jugador = GetComponent<Jugador>();
     tiempoAnterior = Time.time;
     }
-    void Update()
-    {
+    void Update(){
         float delta = Time.time - tiempoAnterior;
         tiempoAnterior = Time.time;
         float h = Input.GetAxis("Horizontal");
@@ -27,6 +26,40 @@ public class ControlJugador : MonoBehaviour
         if (Mathf.Abs(h) > 0.01f){
             Debug.Log("Movimiento horizontal: " + h);
         }
+
+        
+        if (Input.GetAxis("Jump") > 0 && jugador.enSuelo){
+            velocidadVertical = 10f;
+            jugador.enSuelo = false;
+            tiempoSaltoActual = 0f;
+            Debug.Log("Input Detectado: Tecla de Salto (Espacio)");
+        }
+
+        if (!jugador.enSuelo && Input.GetAxis("Jump") > 0)
+        {
+            if (tiempoSaltoActual < tiempoMaxSalto)
+            {
+                velocidadVertical += 20f * delta;
+                tiempoSaltoActual += delta;
+            }
+        }
+
+        if (Input.GetAxis("Jump") == 0)
+        {
+            tiempoSaltoActual = tiempoMaxSalto;
+        }
+
+        if (jugador.enSuelo)
+        {
+            velocidadVertical = 0;
+        }
+        else
+        {
+            velocidadVertical += gravedad * delta;
+        }
+
+        transform.position += new Vector3(0, velocidadVertical * delta, 0);
+
     }
     void FixedUpdate()
     {
