@@ -72,12 +72,16 @@ public class ControlJugador : MonoBehaviour
         else
             velocidadVertical += gravedad * delta;
         
+        if (jugador.enSuelo && velocidadVertical < 0){
+            velocidadVertical = 0;
+        }
+
         transform.position += new Vector3(
             velocidadActual * delta,
             velocidadVertical * delta,
             0
         );
-        
+
         estaCaminando = Mathf.Abs(velocidadActual) > 0.1f;
         estaSaltando = velocidadVertical > 0.1f;
         estaCayendo = velocidadVertical < -0.1f;
