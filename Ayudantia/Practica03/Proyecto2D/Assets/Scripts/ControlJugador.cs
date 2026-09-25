@@ -66,6 +66,11 @@ public class ControlJugador : MonoBehaviour
             coyoteTimer = 0;
             Debug.Log("Input Detectado: Tecla de Salto (Espacio)");
         }
+
+        if (velocidadVertical < 0)
+            velocidadVertical += gravedadCaida * delta;
+        else
+            velocidadVertical += gravedad * delta;
     }
     void FixedUpdate()
     {
