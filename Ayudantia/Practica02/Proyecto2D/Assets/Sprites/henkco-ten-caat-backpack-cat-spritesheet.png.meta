@@ -1,0 +1,906 @@
+fileFormatVersion: 2
+guid: 695a07c607025e84fb0695fbabf93456
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 480
+        width: 68
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74b9668682287746a27f37317e9c51f
+      internalID: 972164325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 480
+        width: 76
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de6eb0a9cb699741b8e3d07748fb80c
+      internalID: -1618616498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 480
+        width: 77
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a0db864681e3845a6e8597e4fba03f
+      internalID: -845499636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 480
+        width: 76
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd38eb4c864e3d346b1968d4d4264013
+      internalID: -786750622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 480
+        width: 72
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071327352354a464faacdd3eaf8b750e
+      internalID: 244086987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 480
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883d643a7870d7849a6872af3665d064
+      internalID: -1169081247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 480
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c1082ceb56cf3458b089a23e57c765
+      internalID: 1269678972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 480
+        width: 64
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8d53632f49e034abfae971e2ee2050
+      internalID: 2053058853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 360
+        width: 68
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68009c0ef9627874c99af73af18651db
+      internalID: 265267346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 360
+        width: 76
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7104308678f8c074192d455ebe537ba0
+      internalID: 924599202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 360
+        width: 77
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad0d0d20e7e37649803269254e21d28
+      internalID: -1503567959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 360
+        width: 76
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4935fe1c40148a84087eda23224343a2
+      internalID: -1559917534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 360
+        width: 72
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae55fc1804d37c940bda1a87f2d94c50
+      internalID: 190510893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 360
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a82dcf5586dae0438d9ea41170ae41d
+      internalID: -88144767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 360
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8652e2aafa3294795ff1ad4c1a9272
+      internalID: 969777724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 360
+        width: 64
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2470f7dbb1cc64e468322aceccab36d6
+      internalID: 1799843971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 240
+        width: 72
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88454071dd6dc44bad3095a0ce80694
+      internalID: -953828919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 240
+        width: 72
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fab5c889b3489e4caa6547945d9f3e6
+      internalID: -1608497319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 240
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4c753734999a544bf413b94b40ee76
+      internalID: -1336423368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 244
+        width: 72
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0057583183aa948a15422b55a06690
+      internalID: 2000470901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 244
+        width: 72
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1f490d5bc7e654cb753ffbd6248089
+      internalID: 1437786096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 240
+        width: 72
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c2714ccccb0df45b2448bde41092e3
+      internalID: 1474788880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 240
+        width: 72
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1889d7a5c9cf17042a62bf545785077e
+      internalID: 333848198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 240
+        width: 72
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f8f3ce900464c44b564b5e6c7ad683
+      internalID: 1693497232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 120
+        width: 68
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48875df42f2a1a54f817ef8af28cff6d
+      internalID: -17278814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 120
+        width: 72
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689a4196a3b220f49be03a2560e7906a
+      internalID: 1906430911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 120
+        width: 80
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464a55248a14d514bb153ff469b91007
+      internalID: 1301432029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 120
+        width: 80
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae45b6036f50323458e963f6b1f6c407
+      internalID: -253806826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 120
+        width: 76
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748189167ac21cf47b1449760871e66d
+      internalID: -395806465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 120
+        width: 73
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f447017f9b783e14f8ec075445aaf54c
+      internalID: 1569143693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 120
+        width: 64
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d93f0d2a64279a41904dc12fc70e2d9
+      internalID: 279388040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 120
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2b7b532ef0c0c41a74828fbb273478
+      internalID: 977836032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 100
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4ad52f3518100438d9df807d97db70
+      internalID: -665185441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238ae6a2b04357946ba23765b248e4ce
+      internalID: -184536876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 92
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e91a39c8d470094793a8111c7ccaf30
+      internalID: 2088202614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: henkco-ten-caat-backpack-cat-spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 0
+        width: 96
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e764ed28d0a034ea1ce16a7ec9338f
+      internalID: -1999056584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      henkco-ten-caat-backpack-cat-spritesheet_0: 972164325
+      henkco-ten-caat-backpack-cat-spritesheet_1: -1618616498
+      henkco-ten-caat-backpack-cat-spritesheet_10: -1503567959
+      henkco-ten-caat-backpack-cat-spritesheet_11: -1559917534
+      henkco-ten-caat-backpack-cat-spritesheet_12: 190510893
+      henkco-ten-caat-backpack-cat-spritesheet_13: -88144767
+      henkco-ten-caat-backpack-cat-spritesheet_14: 969777724
+      henkco-ten-caat-backpack-cat-spritesheet_15: 1799843971
+      henkco-ten-caat-backpack-cat-spritesheet_16: -953828919
+      henkco-ten-caat-backpack-cat-spritesheet_17: -1608497319
+      henkco-ten-caat-backpack-cat-spritesheet_18: -1336423368
+      henkco-ten-caat-backpack-cat-spritesheet_19: 2000470901
+      henkco-ten-caat-backpack-cat-spritesheet_2: -845499636
+      henkco-ten-caat-backpack-cat-spritesheet_20: 1437786096
+      henkco-ten-caat-backpack-cat-spritesheet_21: 1474788880
+      henkco-ten-caat-backpack-cat-spritesheet_22: 333848198
+      henkco-ten-caat-backpack-cat-spritesheet_23: 1693497232
+      henkco-ten-caat-backpack-cat-spritesheet_24: -17278814
+      henkco-ten-caat-backpack-cat-spritesheet_25: 1906430911
+      henkco-ten-caat-backpack-cat-spritesheet_26: 1301432029
+      henkco-ten-caat-backpack-cat-spritesheet_27: -253806826
+      henkco-ten-caat-backpack-cat-spritesheet_28: -395806465
+      henkco-ten-caat-backpack-cat-spritesheet_29: 1569143693
+      henkco-ten-caat-backpack-cat-spritesheet_3: -786750622
+      henkco-ten-caat-backpack-cat-spritesheet_30: 279388040
+      henkco-ten-caat-backpack-cat-spritesheet_31: 977836032
+      henkco-ten-caat-backpack-cat-spritesheet_32: -665185441
+      henkco-ten-caat-backpack-cat-spritesheet_33: -184536876
+      henkco-ten-caat-backpack-cat-spritesheet_34: 2088202614
+      henkco-ten-caat-backpack-cat-spritesheet_35: -1999056584
+      henkco-ten-caat-backpack-cat-spritesheet_4: 244086987
+      henkco-ten-caat-backpack-cat-spritesheet_5: -1169081247
+      henkco-ten-caat-backpack-cat-spritesheet_6: 1269678972
+      henkco-ten-caat-backpack-cat-spritesheet_7: 2053058853
+      henkco-ten-caat-backpack-cat-spritesheet_8: 265267346
+      henkco-ten-caat-backpack-cat-spritesheet_9: 924599202
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
