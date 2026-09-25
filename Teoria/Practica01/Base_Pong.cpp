@@ -4,9 +4,10 @@
                      // it also includes gl.h and glu.h for the openGL library calls
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 #define PI 3.1415926535898 
-
-double bx, by, bdx, bdy;         // x and y position for house to be drawn
+//Variables 
+double bx, by, bdx, bdy;        
 double ball_speed;
 
 GLfloat paddleWidth = 3.f;
@@ -18,6 +19,8 @@ double p2x = 152.0;
 
 bool upPressed = false, downPressed = false;
 bool wPressed = false, sPressed = false;
+
+int score1 = 0, score2 = 0;
 
 GLint circle_points = 100; 
 void MyCircle2f(GLfloat centerx, GLfloat centery, GLfloat radius){
@@ -66,6 +69,63 @@ void update_paddles() {
     if (p2y + halfP > 120) p2y = 120 - halfP;
 }
 
+void reset_ball(int direccion) {
+    bx = 80.0;
+    by = 60.0;
+    bdx = direccion;
+    bdy = (rand() % 2 == 0) ? 1 : -1;
+}
+
+void update_ball() {
+    bx += bdx * ball_speed;
+    by += bdy * ball_speed;
+ 
+    // Rebote arriba / abajo
+    if (by + RadiusOfBall >= 120) {
+        by = 120 - RadiusOfBall;
+        bdy = -1;
+    } else if (by - RadiusOfBall <= 0) {
+        by = RadiusOfBall;
+        bdy = 1;
+    }
+ 
+    double halfP = paddleHeight / 2.0;
+ 
+    // Colision conjugador 1 (izquierda)
+    if (bdx < 0 &&
+        bx - RadiusOfBall <= p1x + paddleWidth / 2 &&
+        bx - RadiusOfBall >= p1x - paddleWidth / 2 &&
+        by >= p1y - halfP && by <= p1y + halfP)
+    {
+        bdx = 1;
+        bx = p1x + paddleWidth / 2 + RadiusOfBall;
+    }
+ 
+    // Colision con jugador 2 (derecha)
+    if (bdx > 0 &&
+        bx + RadiusOfBall >= p2x - paddleWidth / 2 &&
+        bx + RadiusOfBall <= p2x + paddleWidth / 2 &&
+        by >= p2y - halfP && by <= p2y + halfP)
+    {
+        bdx = -1;
+        bx = p2x - paddleWidth / 2 - RadiusOfBall;
+    }
+ 
+    // Score para el jugador 2
+    if (bx - RadiusOfBall < 0) {
+        score2++;
+        printf("Score para Jugador 2 \nScores: J1: %d  J2: %d\n", score1, score2);
+        reset_ball(1);
+    }
+ 
+    // Score para el jugador 1 
+    if (bx + RadiusOfBall > 160) {
+        score1++;
+        printf("Score para Jugador 1 \nScores: J1: %d  J2: %d\n", score1, score2);
+        reset_ball(-1);
+    }
+}
+
 
 void Display(void)
 {
@@ -75,23 +135,9 @@ void Display(void)
   glClear(GL_COLOR_BUFFER_BIT);
 
   update_paddles();
-
-  // Mover la pelota
-  bx += bdx * ball_speed;
-  by += bdy * ball_speed;
-
-  // Rebote arriba / abajo (por ahora, los lados los dejamos para el commit de colisiones/puntuación)
-  if (by + RadiusOfBall >= 120) {
-      by = 120 - RadiusOfBall;
-      bdy = -1;
-  }
-  else if (by - RadiusOfBall <= 0) {
-      by = RadiusOfBall;
-      bdy = 1;
-  }
+  update_ball();
   glLoadIdentity();
 
-  // Trasladar la pelota a su posicion actual
   glPushMatrix();
   glTranslatef((GLfloat)bx, (GLfloat)by, 0.f);
   draw_ball();
