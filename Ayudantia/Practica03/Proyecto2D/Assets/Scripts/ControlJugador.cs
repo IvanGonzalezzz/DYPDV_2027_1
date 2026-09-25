@@ -71,6 +71,12 @@ public class ControlJugador : MonoBehaviour
             velocidadVertical += gravedadCaida * delta;
         else
             velocidadVertical += gravedad * delta;
+        
+        transform.position += new Vector3(
+            velocidadActual * delta,
+            velocidadVertical * delta,
+            0
+        );
     }
     void FixedUpdate()
     {
