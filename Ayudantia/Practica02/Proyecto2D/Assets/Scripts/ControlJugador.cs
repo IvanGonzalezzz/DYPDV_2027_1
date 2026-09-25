@@ -17,6 +17,8 @@ public class ControlJugador : MonoBehaviour
     }
     void Update()
     {
+        float delta = Time.time - tiempoAnterior;
+        tiempoAnterior = Time.time;
         float h = Input.GetAxis("Horizontal");
         if (Mathf.Abs(h) > 0.01f)
         {
