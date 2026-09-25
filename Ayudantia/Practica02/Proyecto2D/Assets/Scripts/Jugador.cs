@@ -16,10 +16,10 @@ public class Jugador : MonoBehaviour{
     }
     private void OnCollisionStay2D(Collision2D col){
         Debug.Log("OnCollisionStay2D: Manteniendo con " + col.gameObject.name);
-        private void OnCollisionExit2D(Collision2D col){
-            if (col.gameObject.CompareTag("Suelo")){
-                enSuelo = false;
-            }
+    }
+    private void OnCollisionExit2D(Collision2D col){
+        if (col.gameObject.CompareTag("Suelo")){
+            enSuelo = false;
         }
     }
 }
