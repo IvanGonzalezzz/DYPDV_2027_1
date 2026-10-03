@@ -145,6 +145,14 @@ MonoBehaviour:
   velocidadVertical: 0
   gravedad: -20
   tiempoMaxSalto: 0.2
+  desaceleracion: 8
+  gravedadCaida: -30
+  tiempoCoyote: 0.1
+  tiempoBufferSalto: 0.1
+  fuerzaSalto: 10
+  estaCaminando: 0
+  estaSaltando: 0
+  estaCayendo: 0
 --- !u!114 &200790798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +166,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enSuelo: 0
+--- !u!95 &200790803
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200790796}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 891fc0dba2f7bf84fbd8c383f6ce4f30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +471,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2801449245298875986, guid: db9a3b2ca36fdaf46947afe791eb2834, type: 3}
       insertIndex: -1
       addedObject: {fileID: 200790797}
+    - targetCorrespondingSourceObject: {fileID: 2801449245298875986, guid: db9a3b2ca36fdaf46947afe791eb2834, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 200790803}
   m_SourcePrefab: {fileID: 100100000, guid: db9a3b2ca36fdaf46947afe791eb2834, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

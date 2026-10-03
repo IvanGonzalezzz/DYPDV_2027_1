@@ -11,6 +11,7 @@ public class ControlJugador : MonoBehaviour
     private float tiempoSaltoActual = 0f;
     private float tiempoAnterior;
     private Jugador jugador;
+    private Animator anim;
     public float desaceleracion = 8f;
     public float gravedadCaida = -30f;
     public float tiempoCoyote = 0.1f;
@@ -23,11 +24,16 @@ public class ControlJugador : MonoBehaviour
     public bool estaCaminando;
     public bool estaSaltando;
     public bool estaCayendo;
-    void Awake(){
-    jugador = GetComponent<Jugador>();
-    tiempoAnterior = Time.time;
+
+    void Awake()
+    {
+        jugador = GetComponent<Jugador>();
+        anim = GetComponent<Animator>();
+        tiempoAnterior = Time.time;
     }
-    void Update(){
+
+    void Update()
+    {
         float delta = Time.time - tiempoAnterior;
         tiempoAnterior = Time.time;
 
@@ -35,11 +41,13 @@ public class ControlJugador : MonoBehaviour
         velocidadActual += h * aceleracion * delta;
         velocidadActual = Mathf.Clamp(velocidadActual, -velocidadMax, velocidadMax);
 
-        if (Mathf.Abs(h) > 0.01f){
+        if (Mathf.Abs(h) > 0.01f)
+        {
             Debug.Log("Movimiento horizontal: " + h);
         }
 
-        if (h == 0){
+        if (h == 0)
+        {
             if (velocidadActual > 0)
                 velocidadActual -= desaceleracion * delta;
             else if (velocidadActual < 0)
@@ -58,8 +66,9 @@ public class ControlJugador : MonoBehaviour
             bufferTimer = tiempoBufferSalto;
         else
             bufferTimer -= delta;
-        
-        if (bufferTimer > 0 && coyoteTimer > 0){
+
+        if (bufferTimer > 0 && coyoteTimer > 0)
+        {
             velocidadVertical = fuerzaSalto;
             jugador.enSuelo = false;
             bufferTimer = 0;
@@ -71,8 +80,9 @@ public class ControlJugador : MonoBehaviour
             velocidadVertical += gravedadCaida * delta;
         else
             velocidadVertical += gravedad * delta;
-        
-        if (jugador.enSuelo && velocidadVertical < 0){
+
+        if (jugador.enSuelo && velocidadVertical < 0)
+        {
             velocidadVertical = 0;
         }
 
@@ -85,7 +95,12 @@ public class ControlJugador : MonoBehaviour
         estaCaminando = Mathf.Abs(velocidadActual) > 0.1f;
         estaSaltando = velocidadVertical > 0.1f;
         estaCayendo = velocidadVertical < -0.1f;
+
+        anim.SetBool("Caminando", estaCaminando);
+        anim.SetBool("Saltando", estaSaltando);
+        anim.SetBool("Cayendo", estaCayendo);
     }
+
     void FixedUpdate()
     {
     }
