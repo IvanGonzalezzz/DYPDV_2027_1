@@ -12,10 +12,16 @@ public class ControlJugador : MonoBehaviour
     private float tiempoAnterior;
     private Jugador jugador;
     private Animator anim;
+
+    public AudioClip sonidoSalto;
+    public AudioClip sonidoPaso;
+    private AudioSource audioSrc;
+
     public float desaceleracion = 8f;
     public float gravedadCaida = -30f;
     public float tiempoCoyote = 0.1f;
     public float tiempoBufferSalto = 0.1f;
+
     private float coyoteTimer = 0f;
     private float bufferTimer = 0f;
 
@@ -29,6 +35,7 @@ public class ControlJugador : MonoBehaviour
     {
         jugador = GetComponent<Jugador>();
         anim = GetComponent<Animator>();
+        audioSrc = GetComponent<AudioSource>();
         tiempoAnterior = Time.time;
     }
 
@@ -38,6 +45,7 @@ public class ControlJugador : MonoBehaviour
         tiempoAnterior = Time.time;
 
         float h = Input.GetAxis("Horizontal");
+
         velocidadActual += h * aceleracion * delta;
         velocidadActual = Mathf.Clamp(velocidadActual, -velocidadMax, velocidadMax);
 
@@ -70,9 +78,14 @@ public class ControlJugador : MonoBehaviour
         if (bufferTimer > 0 && coyoteTimer > 0)
         {
             velocidadVertical = fuerzaSalto;
+
             jugador.enSuelo = false;
+
             bufferTimer = 0;
             coyoteTimer = 0;
+
+            audioSrc.PlayOneShot(sonidoSalto);
+
             Debug.Log("Input Detectado: Tecla de Salto (Espacio)");
         }
 
@@ -99,6 +112,14 @@ public class ControlJugador : MonoBehaviour
         anim.SetBool("Caminando", estaCaminando);
         anim.SetBool("Saltando", estaSaltando);
         anim.SetBool("Cayendo", estaCayendo);
+
+        if (estaCaminando && jugador.enSuelo)
+        {
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.PlayOneShot(sonidoPaso);
+            }
+        }
     }
 
     void FixedUpdate()
