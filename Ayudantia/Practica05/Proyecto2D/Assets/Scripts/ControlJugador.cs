@@ -8,7 +8,6 @@ public class ControlJugador : MonoBehaviour
     public float velocidadVertical = 0f;
     public float gravedad = -20f;
     public float tiempoMaxSalto = 0.2f;
-    private float tiempoSaltoActual = 0f;
     private float tiempoAnterior;
     private Jugador jugador;
     private Animator anim;
