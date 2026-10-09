@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class Jugador : MonoBehaviour{
+public class Jugador : Personaje{
     public bool enSuelo = false;
-    private void Awake(){
+    protected override void Awake(){
+        base.Awake();
         Debug.Log("Awake: Objeto Jugador cargado en memoria");
     }
     private void Start(){
